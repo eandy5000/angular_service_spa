@@ -5,7 +5,7 @@
     <title>Services</title>
     <link rel="stylesheet" href="../styles/style.css">
 </head>
-<body ng-controller="MainCtrl">
+<body ng-controller="MainCtrl" ng-class = "{green: isGreen(), red: isRed(), yellow: isYellow()}">
     <nav class="navbar navbar-default">
         <div class= "container">
            <a href="#/" class="navbar-brand">Angular Services</a>

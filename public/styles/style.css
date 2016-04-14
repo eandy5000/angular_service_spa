@@ -6604,3 +6604,11 @@ button.close {
   .hidden-print {
     display: none !important; } }
 /*# sourceMappingURL=bootstrap.css.map */
+.red {
+  background-color: palevioletred; }
+
+.green {
+  background-color: lightgreen; }
+
+.yellow {
+  background-color: lightgoldenrodyellow; }

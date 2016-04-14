@@ -4,26 +4,21 @@ var gulp = require('gulp'),
     uglify = require('gulp-uglify'),
     ts = require('gulp-typescript');
     
- gulp.task('default',['index','pages','comboSass','scss','type','watch']);
+ gulp.task('default',['index','pages','comboSass','scss','script','watch']);
  
  gulp.task('watch', function(){
-     gulp.watch('client/scripts/ts/*.ts',['type']);
+     gulp.watch('client/scripts/*.js',['script']);
      gulp.watch('client/styles/scss/*.scss',['comboSass','scss']);
      gulp.watch('client/views/index.html',['index']);
      gulp.watch('client/views/pages/*.html',['pages']);
      
  });   
- // not using typescript for this project task type will just move app.js for now
- gulp.task('type', function(){
-     return gulp.src('client/scripts/ts/*.js')
-            // typescript is erroring the angular syntax
-            // .pipe(ts({
-            //     noImplicitAny : true,
-            //     out : 'app.js'   
-            // }))
-        //  .pipe(uglify())  
-            .pipe(gulp.dest('public/scripts/'))
- });
+
+gulp.task('script', function(){
+   return gulp.src('client/scripts/*.js')
+       // .pipe(uglify())
+          .pipe(gulp.dest('public/scripts/'));
+});
  
  gulp.task('comboSass', function(){
      return gulp.src('client/styles/scss/*.scss')
